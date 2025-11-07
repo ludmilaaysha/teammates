@@ -10,8 +10,6 @@ import org.testng.annotations.Test;
 
 import teammates.test.BaseTestCase;
 
-import teammates.common.util.StringHelperExtension;
-
 /**
  * SUT: {@link FieldValidator}.
  */
@@ -293,7 +291,13 @@ public class FieldValidatorTest extends BaseTestCase {
     }
 
     @Test
-    public void testGetInvalidityInfoForGoogleId_McDcCases() {
+    public void testGetInvalidityInfoForGoogleId_mcdc_null_throwException() {
+        assertThrows(AssertionError.class, () -> FieldValidator.getInvalidityInfoForEmail(null));
+    }
+
+    @Test// beginning of MC/DC tests for getInvalidityInfoForGoogleId
+    public void testGetInvalidityInfoForGoogleId_mcdc() {
+        // assertThrows(AssertionError.class, () -> FieldValidator.getInvalidityInfoForGoogleId(null));
 
         String ct1 = "";
         String result1 = FieldValidator.getInvalidityInfoForGoogleId(ct1);
@@ -322,11 +326,7 @@ public class FieldValidatorTest extends BaseTestCase {
         String result6 = FieldValidator.getInvalidityInfoForGoogleId(ct6);
         assertTrue("CT6: deve indicar erro de formato incorreto",
                 result6.toLowerCase().contains("format") || result6.toLowerCase().contains("correct"));
-    }
-
-    // End of MC/DC tests for getInvalidityInfoForGoogleId
-
- 
+    } // End of MC/DC tests for getInvalidityInfoForGoogleId
 
     @Test
     public void testGetInvalidityInfoForEmail_null_throwException() {
