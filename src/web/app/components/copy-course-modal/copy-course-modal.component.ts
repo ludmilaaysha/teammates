@@ -13,6 +13,7 @@ interface Timezone {
 
 const zeroPad: (num: number) => string = (num: number) => String(num).padStart(2, '0');
 
+
 /**
  * Copy course modal.
  */
@@ -48,6 +49,8 @@ export class CopyCourseModalComponent implements OnInit {
   newCourseInstitute: string = '';
   oldCourseId: string = '';
   oldCourseName: string = '';
+  showCourseIdError: boolean = false;
+  showCourseNameError: boolean = false;
 
   selectedFeedbackSessions: Set<FeedbackSession> = new Set<FeedbackSession>();
 
@@ -140,4 +143,17 @@ export class CopyCourseModalComponent implements OnInit {
       this.fetchFeedbackSessionsEvent.emit(this.oldCourseId);
     }
   }
+
+  private isEmpty(value: string): boolean {
+    return !value || value.trim() === '';
+  }
+
+  onCourseIdBlur(): void {
+    this.showCourseIdError = this.isEmpty(this.newCourseId);
+  }
+
+  onCourseNameBlur(): void {
+    this.showCourseNameError = this.isEmpty(this.newCourseName);
+  }
+
 }

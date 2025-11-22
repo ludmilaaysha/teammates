@@ -314,4 +314,37 @@ describe('CopyCourseModalComponent', () => {
     expect(component.selectedFeedbackSessions.size).toBe(0);
     expect(emittedCourseId).toEqual('testId1');
   });
+
+  it('should show an error message when Course ID is blurred while empty', () => {
+    component.newCourseId = '';
+    fixture.detectChanges();
+
+    const courseIdInput = fixture.debugElement.query(By.css('#course-id-input')).nativeElement;
+
+    courseIdInput.dispatchEvent(new Event('focus'));
+    courseIdInput.dispatchEvent(new Event('blur'));
+    fixture.detectChanges();
+
+    const errorMessage = fixture.debugElement.query(By.css('.course-id-error'));
+
+    expect(errorMessage).toBeTruthy();
+    expect(errorMessage.nativeElement.textContent.trim()).toContain('Course ID');
+  });
+
+  it('should show an error message when Course Name is blurred while empty', () => {
+    component.newCourseName = '';
+    fixture.detectChanges();
+
+    const courseNameInput = fixture.debugElement.query(By.css('#course-name-input')).nativeElement;
+
+    courseNameInput.dispatchEvent(new Event('focus'));
+    courseNameInput.dispatchEvent(new Event('blur'));
+    fixture.detectChanges();
+
+    const errorMessage = fixture.debugElement.query(By.css('.course-name-error'));
+
+    expect(errorMessage).toBeTruthy();
+    expect(errorMessage.nativeElement.textContent.trim()).toContain('Course Name');
+  });
+
 });

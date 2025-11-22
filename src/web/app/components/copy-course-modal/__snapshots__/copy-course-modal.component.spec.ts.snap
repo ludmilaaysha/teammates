@@ -19,6 +19,8 @@ exports[`CopyCourseModalComponent should snap when copying from other sessions 1
   oldCourseId=""
   oldCourseName=""
   selectedFeedbackSessions={[Function Set]}
+  showCourseIdError="false"
+  showCourseNameError="false"
   statusMessageService={[Function StatusMessageService]}
   timezoneService={[Function TimezoneService]}
   timezones={[Function Array]}
@@ -62,7 +64,7 @@ exports[`CopyCourseModalComponent should snap when copying from other sessions 1
           </label>
           <input
             class="form-control ng-untouched ng-pristine ng-valid"
-            id="copy-course-id"
+            id="course-id-input"
             maxlength="64"
             placeholder="e.g. CS3215-2013Semester1"
             type="text"
@@ -79,7 +81,7 @@ exports[`CopyCourseModalComponent should snap when copying from other sessions 1
           </label>
           <input
             class="form-control ng-untouched ng-pristine ng-valid"
-            id="copy-course-name"
+            id="course-name-input"
             maxlength="80"
             placeholder="e.g. Software Engineering"
             type="text"
@@ -211,6 +213,8 @@ exports[`CopyCourseModalComponent should snap with default fields 1`] = `
   oldCourseId=""
   oldCourseName=""
   selectedFeedbackSessions={[Function Set]}
+  showCourseIdError="false"
+  showCourseNameError="false"
   statusMessageService={[Function StatusMessageService]}
   timezoneService={[Function TimezoneService]}
   timezones={[Function Array]}
@@ -259,7 +263,7 @@ exports[`CopyCourseModalComponent should snap with default fields 1`] = `
           </label>
           <input
             class="form-control ng-untouched ng-pristine ng-valid"
-            id="copy-course-id"
+            id="course-id-input"
             maxlength="64"
             placeholder="e.g. CS3215-2013Semester1"
             type="text"
@@ -276,7 +280,7 @@ exports[`CopyCourseModalComponent should snap with default fields 1`] = `
           </label>
           <input
             class="form-control ng-untouched ng-pristine ng-valid"
-            id="copy-course-name"
+            id="course-name-input"
             maxlength="80"
             placeholder="e.g. Software Engineering"
             type="text"
@@ -392,6 +396,8 @@ exports[`CopyCourseModalComponent should snap with some course id 1`] = `
   oldCourseId=""
   oldCourseName=""
   selectedFeedbackSessions={[Function Set]}
+  showCourseIdError="false"
+  showCourseNameError="false"
   statusMessageService={[Function StatusMessageService]}
   timezoneService={[Function TimezoneService]}
   timezones={[Function Array]}
@@ -440,7 +446,7 @@ exports[`CopyCourseModalComponent should snap with some course id 1`] = `
           </label>
           <input
             class="form-control ng-untouched ng-pristine ng-valid"
-            id="copy-course-id"
+            id="course-id-input"
             maxlength="64"
             placeholder="e.g. CS3215-2013Semester1"
             type="text"
@@ -457,7 +463,7 @@ exports[`CopyCourseModalComponent should snap with some course id 1`] = `
           </label>
           <input
             class="form-control ng-untouched ng-pristine ng-valid"
-            id="copy-course-name"
+            id="course-name-input"
             maxlength="80"
             placeholder="e.g. Software Engineering"
             type="text"
